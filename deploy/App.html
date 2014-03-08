@@ -18,6 +18,9 @@
         this._myMask.show();
          this._myStore = Ext.create('Rally.data.WsapiDataStore', {
            model: 'Test Case Result',
+           context:{
+                project: null,
+           },
            limit:Infinity,
            fetch: ['Verdict','TestCase','TestSet'],
            autoLoad: true,
@@ -47,8 +50,9 @@
             };
 
             Ext.Array.each(data, function(record) {
-
                 verdict = record.get('Verdict');
+                //var testcase = record.get('TestCase').FormattedID;
+                console.log(verdict);
 
                 switch(verdict)
                 {
@@ -88,7 +92,7 @@
                         },
                         tooltip: {
                             formatter: function () {
-                               return this.point.name + ': <b>' + Highcharts.numberFormat(this.percentage, 1) + '%</b>';
+                               return this.point.name + ': <b>' + Highcharts.numberFormat(this.percentage, 1) + '%</b><br />' + this.point.y;
                                 }
                         },
                         plotOptions : {

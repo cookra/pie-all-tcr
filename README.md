@@ -3,6 +3,7 @@ All Test Case Results in the Workspace by Verdict
 
 ## Overview
 ![](pic.png)
+
 This app is available on an as-is basis. Rally Software does not provide any support for it.
 ## License
 
